@@ -1,0 +1,38 @@
+<apex:page standardController="car__c" recordSetVar="carsList" id="thePage">
+    <script>
+        function save() {
+           alert('hello');
+        }
+        </script>
+    <apex:pageBlock title="CarList">
+        <!-- Car List -->
+        <apex:pageBlockTable value="{! carsList }" var="ct">
+            <apex:column value="{! ct.Name}"/>
+            <apex:column value="{! ct.Full_Price__c}"/>
+            <apex:column value="{! ct.Model_Year__c}"/>
+            <apex:column value="{! ct.Tax__c}"/>
+            <apex:column value="{! ct.Registration_Plate__c}"/>   
+        </apex:pageBlockTable>
+
+        <!-- form new car -->
+        <apex:form>
+            <apex:pageBlock title="New Car">
+              <!--Buttons -->
+               <apex:pageBlockButtons>
+                  <apex:commandButton action="{!save}" value="Save"/>
+               </apex:pageBlockButtons>
+               <!--Input form -->
+               <apex:pageBlockSection columns="1">
+               <apex:inputField value="{!car__c.Name}"/>
+               <apex:inputField value="{!car__c.Price__c}"/>
+               <apex:inputField value="{!car__c.Model_Year__c}"/>
+               <apex:inputField value="{!car__c.tax__c}"/>
+               <apex:inputField value="{!car__c.Registration_Plate__c}"/>
+              </apex:pageBlockSection>
+            </apex:pageBlock>
+            </apex:form>
+  
+    </apex:pageBlock>
+  
+
+</apex:page>
